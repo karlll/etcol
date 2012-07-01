@@ -38,10 +38,10 @@ t_a([],Acc) ->
 text_attr(ansi,reset)-> "0";
 text_attr(ansi,bright)-> "1";
 text_attr(ansi,dim)-> "2";
-text_attr(ansi,underscore)-> "3";
-text_attr(ansi,blink)-> "4";
-text_attr(ansi,reverse)-> "5";
-text_attr(ansi,hidden)-> "6".
+text_attr(ansi,underscore)-> "4";
+text_attr(ansi,blink)-> "5";
+text_attr(ansi,reverse)-> "7";
+text_attr(ansi,hidden)-> "8".
 
 
 fg_color(ansi,black) -> "30";	
