@@ -1,0 +1,4 @@
+etcol
+=====
+
+Erlang terminal colors
