@@ -41,7 +41,19 @@ text_attr(ansi,dim)-> "2";
 text_attr(ansi,underscore)-> "4";
 text_attr(ansi,blink)-> "5";
 text_attr(ansi,reverse)-> "7";
-text_attr(ansi,hidden)-> "8".
+text_attr(ansi,hidden)-> "8";
+text_attr(ansi,alt_font_1)-> "11";
+text_attr(ansi,alt_font_2)-> "12";
+text_attr(ansi,alt_font_3)-> "13";
+text_attr(ansi,alt_font_4)-> "14";
+text_attr(ansi,alt_font_5)-> "15";
+text_attr(ansi,alt_font_6)-> "16";
+text_attr(ansi,alt_font_7)-> "17";
+text_attr(ansi,alt_font_8)-> "18";
+text_attr(ansi,alt_font_9)-> "19";
+text_attr(ansi,framed)-> "51";
+text_attr(ansi,encircled)-> "52";
+text_attr(ansi,overlined)-> "52".
 
 
 fg_color(ansi,black) -> "30";	
@@ -51,7 +63,8 @@ fg_color(ansi,yellow) -> "33";
 fg_color(ansi,blue) -> "34";
 fg_color(ansi,magenta) -> "35";
 fg_color(ansi,cyan) -> "36";
-fg_color(ansi,white) -> "37".
+fg_color(ansi,white) -> "37";
+fg_color(ansi,default_fg) -> "39".
 
 bg_color(ansi,black) ->  "40";
 bg_color(ansi,red) ->  "41";
@@ -60,15 +73,15 @@ bg_color(ansi,yellow) ->  "43";
 bg_color(ansi,blue) ->  "44";
 bg_color(ansi,magenta) ->  "45";
 bg_color(ansi,cyan) ->  "46";
-bg_color(ansi,white) ->  "47".
-
+bg_color(ansi,white) ->  "47";
+bg_color(ansi,default_bg) -> "49".
 
 % ****************************************************************
 
 test() ->
 
-    Colors = [ black, red, green, yellow, blue, magenta, cyan, white ],
-    Attrs = [ bright, dim, underscore, blink, reverse, hidden ],
+    Colors = [ black, red, green, yellow, blue, magenta, cyan, white],
+    Attrs = [ bright, dim, underscore, blink, reverse, hidden],
 
     AllCombos = [ {A,F,B} || A <- Attrs, F <- Colors, B <- lists:reverse(Colors) ],
 
@@ -86,5 +99,5 @@ test() ->
 
     AllCombosAttr = lists:map(Disp,AllCombos),
     AllCombosStr = t_a(AllCombosAttr),
-    io:format("~s",[AllCombosStr]),
-    exit(normal).
+    io:format("~ts",[AllCombosStr]).
+    

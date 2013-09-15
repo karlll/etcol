@@ -20,7 +20,7 @@ Erlang terminal colors
 
 Try:
 
-	> erlc ertcol
+	> erlc etcol
 	> erl -noshell -run ertcol test
 
 
